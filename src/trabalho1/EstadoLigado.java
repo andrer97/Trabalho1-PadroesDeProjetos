@@ -1,20 +1,25 @@
 package trabalho1;
 
-public class EstadoLigado implements Estado {
+public class EstadoLigado extends Estado {
 	
-    @Override
-    public void ligar(Dispositivo dispositivo) {
+    public EstadoLigado(Dispositivo dispositivo) {
+		super(dispositivo);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+    public void ligar() {
         System.out.println("O dispositivo já está ligado.");
     }
 
     @Override
-    public void desligar(Dispositivo dispositivo) {
+    public void desligar() {
         System.out.println("Desligando o dispositivo...");
         dispositivo.setEstado(new EstadoDesligado());
     }
 
     @Override
-    public void economizarEnergia(Dispositivo dispositivo) {
+    public void economizarEnergia() {
         System.out.println("Mudando para o modo de economia de energia.");
         dispositivo.setEstado(new EstadoEconomiaEnergia());
     }

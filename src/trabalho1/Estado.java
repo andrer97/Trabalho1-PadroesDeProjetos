@@ -1,8 +1,26 @@
 package trabalho1;
 
-public interface Estado {
+public abstract class Estado {
 	
-    void ligar(Dispositivo dispositivo);
-    void desligar(Dispositivo dispositivo);
-    void economizarEnergia(Dispositivo dispositivo);
+	private Dispositivo dispositivo;
+	
+    public Estado(Dispositivo dispositivo) {
+		super();
+		this.dispositivo = dispositivo;
+	}
+
+	public abstract void ligar();
+    
+    public abstract void desligar();
+    
+    public abstract void economizarEnergia();
+    
+
+	public Dispositivo getDispositivo() {
+		return dispositivo;
+	}
+
+	public void setDispositivo(Dispositivo dispositivo) {
+		this.dispositivo = dispositivo;
+	}
 }
