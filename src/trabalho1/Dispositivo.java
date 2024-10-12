@@ -10,7 +10,11 @@ public abstract class Dispositivo {
 	}
 	
 	public void alterarModo(ModoOperacao novoModo) {
-		this.modoOperacao = novoModo;
+        if (estado instanceof EstadoLigado) {
+            this.modoOperacao = novoModo;
+        } else {
+            System.out.println("Não é possível alterar o modo enquanto o dispositivo está desligado.");
+        }
 	}
 	
 	public void executarModo() {

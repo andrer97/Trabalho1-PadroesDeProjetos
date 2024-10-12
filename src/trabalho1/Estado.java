@@ -9,7 +9,7 @@ public abstract class Estado {
 		this.dispositivo = dispositivo;
 	}
 
-	public abstract void ligarDesligar();   
+	public abstract void ligarDesligar();
 
 	public Dispositivo getDispositivo() {
 		return dispositivo;

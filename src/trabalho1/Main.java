@@ -13,6 +13,7 @@ public class Main {
 		d1.ligarDesligar();
 		System.out.println(d1.getModo());
 		d1.alterarModo(new ModoEconomia());
+		System.out.println(d1.getModo());
 		d1.executarModo();
 		d1.ligarDesligar();
 		//d1.alterarModo(new ModoEconomia());

@@ -8,7 +8,7 @@ public class EstadoLigado extends Estado {
     @Override
     public void ligarDesligar() {
         System.out.println("Desligando o dispositivo...");
-        dispositivo.setEstado(new EstadoDesligado(dispositivo));
         dispositivo.alterarModo(null);
+        dispositivo.setEstado(new EstadoDesligado(dispositivo));
     }
 }
