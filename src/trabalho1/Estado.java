@@ -2,19 +2,14 @@ package trabalho1;
 
 public abstract class Estado {
 	
-	private Dispositivo dispositivo;
+	protected Dispositivo dispositivo;
 	
     public Estado(Dispositivo dispositivo) {
 		super();
 		this.dispositivo = dispositivo;
 	}
 
-	public abstract void ligar();
-    
-    public abstract void desligar();
-    
-    public abstract void economizarEnergia();
-    
+	public abstract void ligarDesligar();   
 
 	public Dispositivo getDispositivo() {
 		return dispositivo;

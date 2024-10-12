@@ -4,18 +4,9 @@ public class DispositivoArCondicionado extends Dispositivo {
 	
 	public DispositivoArCondicionado() {
 		this.modoOperacao = new ModoNormal();
+		this.estado = new EstadoDesligado(this);
 	}
-	
-	@Override
-	public void ligar() {
-		System.out.println("Ar Condicionado ligado.");
-	}
-	
-	@Override
-	public void desligar() {
-		System.out.println("Ar Condicionado desligado.");
-	}
-	
+
 	public void ajustarTemperatura(int temperatura) {
 		System.out.println("Temperatura ajustada para: " + temperatura + " graus.");
 	}

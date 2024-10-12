@@ -3,7 +3,7 @@ package trabalho1;
 public abstract class Dispositivo {
 	
 	protected ModoOperacao modoOperacao;
-	private Estado estado;
+	protected Estado estado;
 	
 	public void alterarModo(ModoOperacao novoModo) {
 		this.modoOperacao = novoModo;
@@ -15,9 +15,9 @@ public abstract class Dispositivo {
 		}
 	}
 	
-	public abstract void ligar();
-	
-	public abstract void desligar();
+	public void ligarDesligar() {
+		getEstado().ligarDesligar();
+	}
 
 	public Estado getEstado() {
 		return estado;
