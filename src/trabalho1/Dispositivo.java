@@ -5,6 +5,10 @@ public abstract class Dispositivo {
 	protected ModoOperacao modoOperacao;
 	protected Estado estado;
 	
+	public ModoOperacao getModo() {
+		return modoOperacao;
+	}
+	
 	public void alterarModo(ModoOperacao novoModo) {
 		this.modoOperacao = novoModo;
 	}
