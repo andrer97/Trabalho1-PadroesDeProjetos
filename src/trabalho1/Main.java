@@ -9,7 +9,7 @@ public class Main {
 		Dispositivo d1 = new DispositivoArCondicionado();
 		casa.adicionarDispositivo("ar", d1);
 		
-		System.out.println(d1.getModo());
+		/*System.out.println(d1.getModo());
 		d1.ligarDesligar();
 		System.out.println(d1.getModo());
 		d1.alterarModo(new ModoEconomia());
@@ -20,7 +20,7 @@ public class Main {
 		d1.executarModo();
 		System.out.println(d1.getModo());
 		d1.alterarModo(new ModoEconomia());
-		System.out.println(d1.getModo());
+		System.out.println(d1.getModo());*/
 		
 		/*System.out.println(casa.obterDispositivo("ar"));
 
@@ -38,9 +38,15 @@ public class Main {
 		d1.executarModo();
 		d1.desligar();*/
 		
-		casa.adicionarDispositivo("aspirador", new DispositivoNulo());
+		casa.adicionarDispositivoGenerico("aspirador");
+		Dispositivo teste = new DispositivoNulo();
+		teste.alterarModo(new ModoEconomia());
+		teste.executarModo();
+		teste.ligarDesligar();
+		teste.setEstado(null);
 		
-		
+		Dispositivo teste2 = casa.obterDispositivo("aspirador");
+		System.out.println(teste2.getEstado());
 		}
 
 }

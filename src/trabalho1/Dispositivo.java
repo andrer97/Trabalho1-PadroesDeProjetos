@@ -5,20 +5,16 @@ public abstract class Dispositivo {
 	protected ModoOperacao modoOperacao;
 	protected Estado estado;
 	
-	public ModoOperacao getModo() {
-		return modoOperacao;
-	}
-	
 	public void alterarModo(ModoOperacao novoModo) {
         if (estado instanceof EstadoLigado) {
             this.modoOperacao = novoModo;
         } else {
-            System.out.println("Não é possível alterar o modo enquanto o dispositivo está desligado.");
+            System.out.println("Não foi possível alterar o modo do dispositivo.");
         }
 	}
 	
 	public void executarModo() {
-		if (modoOperacao != null) {
+		if (!(modoOperacao instanceof ModoNulo)) {
 			modoOperacao.executarModo();
 		}
 	}

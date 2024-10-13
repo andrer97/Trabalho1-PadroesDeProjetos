@@ -10,6 +10,10 @@ public class ControleCasaInteligente {
     public void adicionarDispositivo(String nome, Dispositivo dispositivo) {
         dispositivos.put(nome, dispositivo);
     }
+    
+    public void adicionarDispositivoGenerico(String nome) {
+        dispositivos.put(nome, new DispositivoGenerico(nome));
+    }
 
     public void removerDispositivo(String nome) {
         dispositivos.remove(nome);

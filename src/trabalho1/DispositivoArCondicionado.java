@@ -3,7 +3,7 @@ package trabalho1;
 public class DispositivoArCondicionado extends Dispositivo {
 	
 	public DispositivoArCondicionado() {
-		this.modoOperacao = null;
+		this.modoOperacao = new ModoNulo();
 		this.estado = new EstadoDesligado(this);
 	}
 
