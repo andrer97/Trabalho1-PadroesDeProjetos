@@ -5,6 +5,11 @@ public abstract class Dispositivo {
 	protected ModoOperacao modoOperacao;
 	protected Estado estado;
 	
+	public Dispositivo() {
+		this.modoOperacao = new ModoNulo();
+		this.estado = new EstadoDesligado(this);
+	}
+	
 	public void alterarModo(ModoOperacao novoModo) {
         if (estado instanceof EstadoLigado) {
             this.modoOperacao = novoModo;
@@ -20,7 +25,9 @@ public abstract class Dispositivo {
 	}
 	
 	public void ligarDesligar() {
-		getEstado().ligarDesligar();
+        preLigarDesligar();
+        getEstado().ligarDesligar();
+        posLigarDesligar();
 	}
 
 	public Estado getEstado() {
@@ -30,4 +37,7 @@ public abstract class Dispositivo {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+	
+    protected void preLigarDesligar() {}
+    protected void posLigarDesligar() {}
 }
